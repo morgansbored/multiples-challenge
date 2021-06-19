@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box
+}
+
 html {
   background-color: #efefef;
   color: #000;
@@ -11,6 +15,7 @@ body {
   flex-direction: column;
   font-size: 1.125rem;
   min-height: 100vh;
+  margin: 0;
 }
 
 .wrapper {
@@ -21,7 +26,8 @@ body {
   padding-right: 1.5rem;
   max-width: 1024px;
   width: 100%;
-  height: 100%;
+  min-height: 100%;
+  padding-bottom: 2rem;
 }
 
 .content {
@@ -31,30 +37,42 @@ body {
 }
 
 .container {
-display: flex;
+  display: flex;
 }
 
 .input-area, .output-area {
-padding-left: 20px;
-padding-right: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .input-area {
-flex-direction: column;
-width: 33%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .output-area {
-width: 66%;
-background-color: #eee;
+  background-color: #eee;
+  flex: 2;
 }
 
 input, button {
-border-radius: 6px;
-padding: 10px;
-width: 100%;
+  border-radius: 6px;
+  padding: 10px;
+  width: 100%;
+  display: block;
+}
+
+input {
+  margin-top: 0px;
+  margin-bottom: 8px;
 }
 
 button {
-margin-bottom: 5px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.common {
+  color: red;
 }
