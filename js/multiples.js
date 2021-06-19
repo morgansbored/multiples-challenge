@@ -21,18 +21,29 @@ function getMultiples(inInt) {
 
 function showResults() {
   const result = getMultiples(userInput.value);
-
-  output.innerHTML = 
-    `<p>You input the number ${userInput.value}</p>`;
-    if (result === 0) {
+  output.innerHTML = `<h3>You input the number <b>${userInput.value}</b></h3>`;
+  if (result === 0) {
     output.innerHTML += 
-    `<p>The result is: ${result}</p>
-    `;
-  } else {
-    output.innerHTML += 
-    `<p>Multiples of 3 or 5 below ${userInput.value} are: ${result.multiples}</p>
-    <p>They add up to: ${result.sum}</p>
-    `;
+    `<p>The result is: ${result}</p>`;
+  }
+  else {
+    output.innerHTML += `<p>The multiples of 3 or 5 below ${userInput.value} are:</p>`;
+    let list = document.createElement('p');
+    for (let i = 0; i < result.multiples.length; i++) {
+      if (result.multiples[i] % 3 === 0 && result.multiples[i] % 5 === 0)
+      {
+        list.innerHTML += `<span class="common">${result.multiples[i]}</span>`;
+      }
+      else {
+        list.innerHTML += result.multiples[i];
+      }
+      if (i != result.multiples.length - 1) {
+        list.innerHTML += `, `;
+      }
+    }
+    output.appendChild(list);
+    output.innerHTML += `<p>(any numbers in <span class="common">red</span> are multiples of <b>both</b> 3 and 5</p>`;
+    output.innerHTML += `<h3>They add up to <b>${result.sum}</h3>`;
   }
 }
 
