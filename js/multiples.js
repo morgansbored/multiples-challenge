@@ -20,7 +20,16 @@ function getMultiples(inInt) {
 }
 
 function showResults() {
+  if (userInput.value === '') {
+    alert('Please enter a positive integer');
+    return;
+  }
+  if (userInput.value === '0') {
+    startOver();
+    return;
+  }
   const result = getMultiples(userInput.value);
+  output.innerHTML = '';
   output.innerHTML = `<h3>You input the number <b>${userInput.value}</b></h3>`;
   if (result === 0) {
     output.innerHTML += 
@@ -42,7 +51,7 @@ function showResults() {
       }
     }
     output.appendChild(list);
-    output.innerHTML += `<p>(any numbers in <span class="common">red</span> are multiples of <b>both</b> 3 and 5</p>`;
+    output.innerHTML += `<p>(any numbers in <span class="common">red</span> are multiples of <b>both</b> 3 and 5)</p>`;
     output.innerHTML += `<h3>They add up to <b>${result.sum}</h3>`;
   }
 }
@@ -50,5 +59,11 @@ function showResults() {
 function startOver() {
   //clear input box and displayed output
   userInput.value = '';
-  output.innerHTML = '';
+  output.innerHTML = '<h3>Output will appear here...</h3>';
+}
+
+function isNumber(e){
+  e = e || window.event;
+  var charCode = e.which ? e.which : e.keyCode;
+  return /\d/.test(String.fromCharCode(charCode));
 }

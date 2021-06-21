@@ -3,7 +3,7 @@
 }
 
 html {
-  background-color: #efefef;
+  background-color: #2980b9;
   color: #000;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 100%;
@@ -52,8 +52,29 @@ body {
 }
 
 .output-area {
-  background-color: #eee;
   flex: 2;
+  border-top-left-radius: 37px 140px;
+  border-top-right-radius: 23px 130px;
+  border-bottom-left-radius: 110px 19px;
+  border-bottom-right-radius: 120px 24px;
+  font-family: monospace;
+  display: block;
+  position: relative;
+  border: solid 3px #6e7491;
+  padding: 40px 60px;
+  margin-top: 40px;
+  margin-left: 20px;
+  font-size: 18px;
+  line-height: 28px;
+  transform: rotate(-0.5deg);
+  box-shadow: 3px 15px 8px -10px rgba(0, 0, 0, 0.3);
+  transition: all 0.13s ease-in;
+}
+
+label {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
 }
 
 input, button {
@@ -66,6 +87,9 @@ input, button {
 input {
   margin-top: 0px;
   margin-bottom: 8px;
+	padding: 20px;
+  border: solid 2px #6e7491;
+	border-radius: 10px;
 }
 
 button {
@@ -73,6 +97,25 @@ button {
   margin-bottom: 8px;
 }
 
+.custom {
+	color: #fff !important;
+	text-transform: uppercase;
+  font-size: 14px;
+	text-decoration: none;
+	background: #60a3bc;
+	padding: 20px;
+	border-radius: 10px;
+	display: inline-block;
+	border: none;
+	transition: all 0.4s ease 0s;
+}
+
+.custom:hover {
+	text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
+	transition: all 0.4s ease 0s;
+}
+
 .common {
   color: red;
+  font-weight: bold;
 }
