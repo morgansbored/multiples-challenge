@@ -53,10 +53,7 @@ body {
 
 .output-area {
   flex: 2;
-  border-top-left-radius: 37px 140px;
-  border-top-right-radius: 23px 130px;
-  border-bottom-left-radius: 110px 19px;
-  border-bottom-right-radius: 120px 24px;
+  border-radius: 10px;
   font-family: monospace;
   display: block;
   position: relative;
@@ -66,7 +63,6 @@ body {
   margin-left: 20px;
   font-size: 18px;
   line-height: 28px;
-  transform: rotate(-0.5deg);
   box-shadow: 3px 15px 8px -10px rgba(0, 0, 0, 0.3);
   transition: all 0.13s ease-in;
 }
