@@ -12,9 +12,14 @@ function getMultiples(inInt) {
   for (let i = 0; i < inInt; i++) {
     if (i % 3 === 0 || i % 5 === 0) {
       if (i > 0) result.multiples.push(i);
-      result.sum += i;
+      result.sum += i; // or alternative below
     }
   }
+
+  // summing alternative using reduce function
+  // result.sum = result.multiples.reduce(function(inc, item) {
+  //   return inc + item;
+  // });
 
   return result;
 }
